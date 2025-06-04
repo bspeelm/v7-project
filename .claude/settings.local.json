@@ -13,7 +13,17 @@
       "Bash(npm uninstall:*)",
       "Bash(mv:*)",
       "Bash(cp:*)",
-      "Bash(true)"
+      "Bash(true)",
+      "Bash(chmod:*)",
+      "Bash(find:*)",
+      "Bash(grep:*)",
+      "Bash(aws:*)",
+      "Bash(./scripts/init-state-backend.sh:*)",
+      "Bash(terraform init:*)",
+      "Bash(terraform plan:*)",
+      "Bash(terraform apply:*)",
+      "Bash(terraform output:*)",
+      "Bash(terraform destroy:*)"
     ],
     "deny": []
   }

@@ -1,0 +1,243 @@
+name: Terraform
+
+on:
+  push:
+    branches: [ main, develop ]
+    paths: [ 'terraform/**' ]
+  pull_request:
+    branches: [ main ]
+    paths: [ 'terraform/**' ]
+
+env:
+  TF_VERSION: 1.6.0
+  AWS_REGION: us-east-1
+
+jobs:
+  validate:
+    name: Validate
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Setup Terraform
+      uses: hashicorp/setup-terraform@v3
+      with:
+        terraform_version: ${{ env.TF_VERSION }}
+    
+    - name: Terraform Format Check
+      run: terraform fmt -check -recursive terraform/
+    
+    - name: Validate All Environments
+      run: |
+        for env in dev staging prod; do
+          echo "Validating $env..."
+          cd terraform/environments/$env
+          terraform init -backend=false
+          terraform validate
+          cd ../../..
+        done
+
+  plan:
+    name: Plan
+    runs-on: ubuntu-latest
+    needs: validate
+    if: github.event_name == 'pull_request'
+    
+    strategy:
+      matrix:
+        environment: [dev, staging]
+    
+    permissions:
+      id-token: write
+      contents: read
+      pull-requests: write
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Setup Terraform
+      uses: hashicorp/setup-terraform@v3
+      with:
+        terraform_version: ${{ env.TF_VERSION }}
+    
+    - name: Configure AWS Credentials
+      uses: aws-actions/configure-aws-credentials@v4
+      with:
+        role-to-assume: ${{ secrets[format('AWS_ROLE_{0}', matrix.environment)] }}
+        aws-region: ${{ env.AWS_REGION }}
+    
+    - name: Terraform Plan
+      id: plan
+      run: |
+        cd terraform/environments/${{ matrix.environment }}
+        terraform init
+        terraform plan -no-color -out=tfplan > plan.txt
+    
+    - name: Comment Plan
+      uses: actions/github-script@v7
+      if: github.event_name == 'pull_request'
+      with:
+        script: |
+          const fs = require('fs');
+          const plan = fs.readFileSync('terraform/environments/${{ matrix.environment }}/plan.txt', 'utf8');
+          
+          // Truncate plan if too long
+          const maxLength = 65000;
+          const truncated = plan.length > maxLength;
+          const planOutput = truncated ? plan.substring(0, maxLength) + '\n\n... (truncated)' : plan;
+          
+          const output = `#### Terraform Plan for ${{ matrix.environment }} 🪐
+          <details><summary>Show Plan</summary>
+          
+          \`\`\`
+          ${planOutput}
+          \`\`\`
+          
+          </details>
+          
+          ${truncated ? '⚠️ Plan output was truncated. Run locally to see full plan.' : ''}
+          
+          *Pusher: @${{ github.actor }}, Action: \`${{ github.event_name }}\`*`;
+          
+          github.rest.issues.createComment({
+            issue_number: context.issue.number,
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            body: output
+          });
+
+  deploy-dev:
+    name: Deploy to Development
+    runs-on: ubuntu-latest
+    needs: validate
+    if: github.ref == 'refs/heads/develop' && github.event_name == 'push'
+    
+    permissions:
+      id-token: write
+      contents: read
+    
+    environment:
+      name: development
+      url: https://dev.v7climbing.com
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Setup Terraform
+      uses: hashicorp/setup-terraform@v3
+      with:
+        terraform_version: ${{ env.TF_VERSION }}
+    
+    - name: Configure AWS Credentials
+      uses: aws-actions/configure-aws-credentials@v4
+      with:
+        role-to-assume: ${{ secrets.AWS_ROLE_DEV }}
+        aws-region: ${{ env.AWS_REGION }}
+    
+    - name: Deploy to Development
+      run: |
+        cd terraform/environments/dev
+        terraform init
+        terraform apply -auto-approve
+    
+    - name: Terraform Outputs
+      run: |
+        cd terraform/environments/dev
+        terraform output -json > outputs.json
+        echo "::notice title=Deployment Complete::Development environment deployed successfully"
+
+  deploy-staging:
+    name: Deploy to Staging
+    runs-on: ubuntu-latest
+    needs: validate
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    
+    permissions:
+      id-token: write
+      contents: read
+    
+    environment:
+      name: staging
+      url: https://staging.v7climbing.com
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Setup Terraform
+      uses: hashicorp/setup-terraform@v3
+      with:
+        terraform_version: ${{ env.TF_VERSION }}
+    
+    - name: Configure AWS Credentials
+      uses: aws-actions/configure-aws-credentials@v4
+      with:
+        role-to-assume: ${{ secrets.AWS_ROLE_STAGING }}
+        aws-region: ${{ env.AWS_REGION }}
+    
+    - name: Deploy to Staging
+      run: |
+        cd terraform/environments/staging
+        terraform init
+        terraform apply -auto-approve
+    
+    - name: Run Integration Tests
+      run: |
+        # Add integration test commands here
+        echo "Running integration tests..."
+
+  deploy-prod:
+    name: Deploy to Production
+    runs-on: ubuntu-latest
+    needs: [validate, deploy-staging]
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    
+    permissions:
+      id-token: write
+      contents: read
+    
+    environment:
+      name: production
+      url: https://app.v7climbing.com
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Setup Terraform
+      uses: hashicorp/setup-terraform@v3
+      with:
+        terraform_version: ${{ env.TF_VERSION }}
+    
+    - name: Configure AWS Credentials
+      uses: aws-actions/configure-aws-credentials@v4
+      with:
+        role-to-assume: ${{ secrets.AWS_ROLE_PROD }}
+        aws-region: ${{ env.AWS_REGION }}
+    
+    - name: Plan Production Changes
+      run: |
+        cd terraform/environments/prod
+        terraform init
+        terraform plan -out=tfplan
+    
+    - name: Deploy to Production
+      run: |
+        cd terraform/environments/prod
+        terraform apply tfplan
+    
+    - name: Health Check
+      run: |
+        # Add health check commands here
+        echo "Running production health checks..."
+        
+    - name: Notify Deployment
+      if: always()
+      uses: actions/github-script@v7
+      with:
+        script: |
+          const status = '${{ job.status }}';
+          const color = status === 'success' ? 'good' : 'danger';
+          const emoji = status === 'success' ? '✅' : '❌';
+          
+          // Add notification logic here (Slack, Discord, etc.)
+          console.log(`${emoji} Production deployment ${status}`);
