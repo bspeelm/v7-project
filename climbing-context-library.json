@@ -1,0 +1,283 @@
+{
+  "climbingGrades": {
+    "bouldering": {
+      "v-scale": {
+        "progression": ["VB", "V0", "V1", "V2", "V3", "V4", "V5", "V6", "V7", "V8", "V9", "V10", "V11", "V12", "V13", "V14", "V15", "V16", "V17"],
+        "milestones": {
+          "beginner": ["VB", "V0", "V1"],
+          "intermediate": ["V2", "V3", "V4", "V5"],
+          "advanced": ["V6", "V7", "V8", "V9"],
+          "expert": ["V10", "V11", "V12", "V13"],
+          "elite": ["V14", "V15", "V16", "V17"]
+        },
+        "typicalProgression": {
+          "V0_to_V1": "1-3 months",
+          "V1_to_V2": "2-4 months", 
+          "V2_to_V3": "3-6 months",
+          "V3_to_V4": "4-8 months",
+          "V4_to_V5": "6-12 months",
+          "V5_to_V6": "8-18 months",
+          "V6_to_V7": "12-24 months",
+          "V7_to_V8": "18-36 months"
+        }
+      }
+    },
+    "sport": {
+      "yds": ["5.6", "5.7", "5.8", "5.9", "5.10a", "5.10b", "5.10c", "5.10d", "5.11a", "5.11b", "5.11c", "5.11d", "5.12a", "5.12b", "5.12c", "5.12d", "5.13a", "5.13b", "5.13c", "5.13d", "5.14a", "5.14b", "5.14c", "5.14d", "5.15a", "5.15b", "5.15c"],
+      "french": ["4", "5a", "5b", "5c", "6a", "6a+", "6b", "6b+", "6c", "6c+", "7a", "7a+", "7b", "7b+", "7c", "7c+", "8a", "8a+", "8b", "8b+", "8c", "8c+", "9a", "9a+", "9b", "9b+"]
+    }
+  },
+  
+  "trainingPrinciples": {
+    "progressive_overload": {
+      "definition": "Gradually increasing training stimulus to force adaptation",
+      "application": "Increase difficulty through grade, volume, intensity, or density",
+      "guidelines": "No more than 10-20% increase per week in total load"
+    },
+    "specificity": {
+      "definition": "Training should match the demands of your goal",
+      "application": "V7 requires power-endurance, finger strength, and complex movement",
+      "guidelines": "70% of training should mimic goal-route style"
+    },
+    "recovery": {
+      "definition": "Adaptation occurs during rest, not training",
+      "application": "48-72 hours between hard sessions targeting same system",
+      "guidelines": "1-2 full rest days per week, deload every 4-6 weeks"
+    },
+    "periodization": {
+      "definition": "Systematic variation of training variables over time",
+      "phases": {
+        "base": "High volume, low intensity, skill development (4-6 weeks)",
+        "strength": "Moderate volume, high intensity, max hangs (4-6 weeks)",
+        "power": "Low volume, max intensity, campus/dynamic moves (3-4 weeks)", 
+        "performance": "Tapering, sending projects, competition (2-3 weeks)"
+      }
+    }
+  },
+  
+  "physicalCapacities": {
+    "finger_strength": {
+      "importance": "Critical for V6+",
+      "benchmarks": {
+        "V7": "Bodyweight + 30-50% on 20mm edge for 10 seconds",
+        "tests": ["Max hang test", "Repeater test", "Recruitment pulls"]
+      },
+      "training": ["Hangboard protocols", "System boarding", "Limit bouldering"]
+    },
+    "power": {
+      "importance": "Essential for dynamic moves and deadpoints",
+      "benchmarks": {
+        "V7": "Campus 1-4-7 or 1-5-8",
+        "tests": ["Max pull-up", "Campus board", "Power company test"]
+      },
+      "training": ["Campus boarding", "Dynamic bouldering", "Weighted pull-ups"]
+    },
+    "power_endurance": {
+      "importance": "Critical for longer V7 boulders (8-12 moves)",
+      "benchmarks": {
+        "V7": "Complete 4x4s at V4-V5 with 3-minute rest"
+      },
+      "training": ["4x4s", "Circuits", "Linked boulders", "Route climbing"]
+    },
+    "core_strength": {
+      "importance": "Essential for overhangs and body tension",
+      "benchmarks": {
+        "V7": "Front lever 5+ seconds, L-sit 20+ seconds"
+      },
+      "training": ["Front levers", "Hanging leg raises", "Tension board"]
+    },
+    "flexibility": {
+      "importance": "Enables efficient movement and injury prevention",
+      "key_areas": ["Hip flexors", "Hamstrings", "Shoulders", "Thoracic spine"],
+      "training": ["Dynamic stretching pre-climb", "Static stretching post-climb", "Yoga"]
+    }
+  },
+  
+  "technicalSkills": {
+    "footwork": {
+      "fundamentals": ["Precision", "Quiet feet", "Toe vs edge placement", "Smearing"],
+      "advanced": ["Heel hooks", "Toe hooks", "Bicycles", "Heel-toe cams"],
+      "drills": ["Silent feet", "Sticky feet", "One-touch rule", "Hover practice"]
+    },
+    "body_positioning": {
+      "concepts": ["Center of gravity", "Flagging", "Drop knees", "Stemming"],
+      "efficiency": ["Straight arms", "Hip positioning", "Twist locks", "Compression"],
+      "drills": ["Flow practice", "Position mapping", "Static movement"]
+    },
+    "grip_positions": {
+      "types": ["Open hand", "Half crimp", "Full crimp", "Pinch", "Sloper"],
+      "selection": "Match grip to hold type for efficiency and injury prevention",
+      "training": "Vary grip positions to develop comprehensive strength"
+    },
+    "movement_reading": {
+      "skills": ["Route visualization", "Sequence planning", "Hold identification"],
+      "practice": ["Watch others", "Video analysis", "Mental rehearsal", "Beta sharing"]
+    }
+  },
+  
+  "mentalTraining": {
+    "fear_management": {
+      "types": ["Fear of falling", "Fear of failure", "Fear of injury"],
+      "techniques": ["Progressive exposure", "Breathing exercises", "Visualization", "Positive self-talk"]
+    },
+    "focus_strategies": {
+      "pre_climb": ["Visualization", "Breathing", "Movement rehearsal"],
+      "during_climb": ["Process cues", "Breath awareness", "Commitment points"],
+      "post_climb": ["Reflection", "Learning extraction", "Emotional regulation"]
+    },
+    "goal_setting": {
+      "framework": "SMART goals - Specific, Measurable, Achievable, Relevant, Time-bound",
+      "types": ["Process goals", "Performance goals", "Outcome goals"],
+      "examples": {
+        "process": "Practice drop knees 3x per session",
+        "performance": "Hang 20mm edge for 15 seconds",
+        "outcome": "Send first V7 by December"
+      }
+    }
+  },
+  
+  "nutritionGuidelines": {
+    "macronutrients": {
+      "protein": {
+        "target": "0.8-1.0g per pound bodyweight",
+        "timing": "20-30g within 30 minutes post-training",
+        "sources": {
+          "omnivore": ["Chicken", "Fish", "Eggs", "Greek yogurt"],
+          "vegetarian": ["Tofu", "Tempeh", "Legumes", "Quinoa", "Eggs", "Dairy"],
+          "vegan": ["Legumes", "Nuts", "Seeds", "Soy products", "Protein powder"]
+        }
+      },
+      "carbohydrates": {
+        "target": "2-3g per pound for high training days",
+        "timing": "Before and after training for energy and recovery",
+        "sources": ["Oats", "Sweet potatoes", "Rice", "Fruits", "Whole grains"]
+      },
+      "fats": {
+        "target": "0.3-0.4g per pound bodyweight",
+        "importance": "Hormone production, joint health, satiety",
+        "sources": ["Avocados", "Nuts", "Seeds", "Olive oil", "Fatty fish"]
+      }
+    },
+    "hydration": {
+      "baseline": "Half bodyweight in ounces daily",
+      "training": "16-24oz per hour of climbing",
+      "indicators": ["Urine color", "Thirst", "Performance", "Recovery"]
+    },
+    "timing": {
+      "pre_training": "Carbs 1-2 hours before, avoid heavy meals",
+      "during_training": "Water, electrolytes if >90 minutes",
+      "post_training": "Protein + carbs within 30-60 minutes",
+      "daily": "Consistent meal timing for hormone optimization"
+    }
+  },
+  
+  "injuryPrevention": {
+    "common_injuries": {
+      "finger": {
+        "types": ["A2 pulley", "Flexor strain", "Joint synovitis"],
+        "prevention": ["Proper warm-up", "Avoid crimping when tired", "Progressive loading"],
+        "warning_signs": ["Pain during crimping", "Morning stiffness", "Swelling"]
+      },
+      "shoulder": {
+        "types": ["Impingement", "Rotator cuff strain", "Labral tears"],
+        "prevention": ["Antagonist training", "Proper warm-up", "Technique focus"],
+        "warning_signs": ["Pain with overhead movement", "Night pain", "Weakness"]
+      },
+      "elbow": {
+        "types": ["Medial epicondylitis", "Lateral epicondylitis"],
+        "prevention": ["Eccentric exercises", "Avoid overgripping", "Rest when sore"],
+        "warning_signs": ["Pain with gripping", "Tender to touch", "Morning stiffness"]
+      }
+    },
+    "prevention_protocols": {
+      "warm_up": {
+        "general": "5-10 minutes cardio, dynamic stretching",
+        "specific": "Progressive climbing pyramid, easy to moderate",
+        "duration": "Minimum 20-30 minutes before hard climbing"
+      },
+      "antagonist": {
+        "exercises": ["Push-ups", "Reverse wrist curls", "External rotations"],
+        "frequency": "2-3x per week",
+        "timing": "After climbing or separate days"
+      },
+      "recovery": {
+        "active": ["Light climbing", "Swimming", "Yoga", "Walking"],
+        "passive": ["Sleep 7-9 hours", "Massage", "Stretching", "Nutrition"],
+        "tools": ["Foam rolling", "Massage guns", "Ice", "Compression"]
+      }
+    }
+  },
+  
+  "trainingProtocols": {
+    "hangboard": {
+      "beginner": {
+        "protocol": "Repeaters: 7 seconds on, 3 seconds off, 6 reps",
+        "frequency": "2x per week after climbing",
+        "holds": "Jugs and large edges only"
+      },
+      "intermediate": {
+        "protocol": "Max hangs: 10 seconds at 80-90% max",
+        "frequency": "2-3x per week",
+        "holds": "20mm, 15mm edges, 3-finger drag"
+      },
+      "advanced": {
+        "protocol": "Min edge: Find smallest holdable edge for 10 seconds",
+        "frequency": "2x per week in strength phase",
+        "variations": ["One-arm hangs", "Added weight", "Offset hangs"]
+      }
+    },
+    "campus": {
+      "prerequisites": "Climbing V4+ consistently, 1+ years experience",
+      "beginner": "Foot-on laddering, matching",
+      "intermediate": "1-2-3 ladders, basic bumps",
+      "advanced": "1-4-7, double dynos, down climbing"
+    },
+    "circuits": {
+      "endurance": "10-15 problems at 50-60% max, minimal rest",
+      "power_endurance": "4-6 problems at 80% max, 1:1 work:rest",
+      "technique": "Perfect repeats of moderate problems focusing on form"
+    }
+  },
+  
+  "sessionStructure": {
+    "warm_up": {
+      "duration": "20-30 minutes",
+      "components": ["General movement", "Dynamic stretching", "Progressive climbing"],
+      "progression": "Start 4-5 grades below max, increase gradually"
+    },
+    "main_session": {
+      "limit_bouldering": "4-8 attempts on 1-3 hard problems",
+      "volume": "15-25 problems at moderate difficulty",
+      "projecting": "20-30 minutes focused work on goal routes",
+      "technique": "Deliberate practice on specific movements"
+    },
+    "cool_down": {
+      "duration": "10-15 minutes",
+      "components": ["Easy climbing", "Antagonist exercises", "Static stretching"],
+      "importance": "Reduces injury risk and improves recovery"
+    }
+  },
+  
+  "progressionMarkers": {
+    "strength": {
+      "finger": "Increase in hang time or decrease in edge size",
+      "pulling": "Added weight on pull-ups, campus progression",
+      "core": "Longer lever positions, controlled movement"
+    },
+    "technique": {
+      "efficiency": "Same routes feel easier, use less energy",
+      "repertoire": "Successfully use new techniques in climbing",
+      "reading": "Faster route decoding, better sequence finding"
+    },
+    "mental": {
+      "confidence": "Committing to moves without hesitation",
+      "focus": "Maintaining concentration through hard sequences",
+      "resilience": "Bouncing back from falls or failure"
+    },
+    "overall": {
+      "consistency": "Sending grade more frequently",
+      "diversity": "Success on various angles and hold types",
+      "attempts": "Fewer attempts needed for sends"
+    }
+  }
+}
