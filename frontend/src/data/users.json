@@ -1,0 +1,34 @@
+{
+  "devUser": {
+    "id": "dev-user-1",
+    "email": "dev@v7project.com",
+    "name": "Dev User",
+    "createdAt": "2025-01-01T00:00:00Z",
+    "subscription": {
+      "tier": "premium",
+      "status": "active",
+      "expiresAt": "2026-01-01T00:00:00Z"
+    },
+    "preferences": {
+      "units": "imperial",
+      "timezone": "America/New_York"
+    }
+  },
+  "sampleUsers": [
+    {
+      "id": "user-1",
+      "email": "climber@example.com",
+      "name": "Sarah Chen",
+      "createdAt": "2024-12-15T00:00:00Z",
+      "subscription": {
+        "tier": "pro",
+        "status": "active",
+        "expiresAt": "2025-12-15T00:00:00Z"
+      },
+      "preferences": {
+        "units": "metric",
+        "timezone": "America/Los_Angeles"
+      }
+    }
+  ]
+}

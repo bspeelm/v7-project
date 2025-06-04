@@ -99,34 +99,36 @@ export function AIMealPlanner({ onGeneratePlan, isGenerating = false }: AIMealPl
       </Card>
 
       {/* Current Targets */}
-      <Card>
-        <CardHeader>
-          <CardTitle className="flex items-center gap-2">
-            <Target className="h-5 w-5 text-green-600" />
-            Your Daily Targets
-          </CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 text-sm">
-            <div className="text-center p-3 bg-green-50 rounded-lg">
-              <div className="text-2xl font-bold text-green-700">{targets.calories}</div>
-              <div className="text-green-600">Calories</div>
+      {targets && (
+        <Card>
+          <CardHeader>
+            <CardTitle className="flex items-center gap-2">
+              <Target className="h-5 w-5 text-green-600" />
+              Your Daily Targets
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 text-sm">
+              <div className="text-center p-3 bg-green-50 rounded-lg">
+                <div className="text-2xl font-bold text-green-700">{targets.calories}</div>
+                <div className="text-green-600">Calories</div>
+              </div>
+              <div className="text-center p-3 bg-blue-50 rounded-lg">
+                <div className="text-2xl font-bold text-blue-700">{targets.protein}g</div>
+                <div className="text-blue-600">Protein</div>
+              </div>
+              <div className="text-center p-3 bg-orange-50 rounded-lg">
+                <div className="text-2xl font-bold text-orange-700">{targets.carbs}g</div>
+                <div className="text-orange-600">Carbs</div>
+              </div>
+              <div className="text-center p-3 bg-purple-50 rounded-lg">
+                <div className="text-2xl font-bold text-purple-700">{targets.fat}g</div>
+                <div className="text-purple-600">Fat</div>
+              </div>
             </div>
-            <div className="text-center p-3 bg-blue-50 rounded-lg">
-              <div className="text-2xl font-bold text-blue-700">{targets.protein}g</div>
-              <div className="text-blue-600">Protein</div>
-            </div>
-            <div className="text-center p-3 bg-orange-50 rounded-lg">
-              <div className="text-2xl font-bold text-orange-700">{targets.carbs}g</div>
-              <div className="text-orange-600">Carbs</div>
-            </div>
-            <div className="text-center p-3 bg-purple-50 rounded-lg">
-              <div className="text-2xl font-bold text-purple-700">{targets.fat}g</div>
-              <div className="text-purple-600">Fat</div>
-            </div>
-          </div>
-        </CardContent>
-      </Card>
+          </CardContent>
+        </Card>
+      )}
 
       {/* Quick Prompts */}
       <Card>

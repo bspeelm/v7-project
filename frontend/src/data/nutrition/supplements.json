@@ -1,0 +1,178 @@
+{
+  "coreSupplements": [
+    {
+      "id": "creatine",
+      "name": "Creatine Monohydrate",
+      "dose": "4g daily",
+      "timing": "2g pre/post workout",
+      "purpose": "Strength & power",
+      "priority": "high",
+      "category": "performance",
+      "evidenceLevel": "strong",
+      "cost": "low",
+      "sideEffects": ["water retention", "possible stomach upset"],
+      "notes": "Most researched supplement for strength athletes"
+    },
+    {
+      "id": "collagen",
+      "name": "Collagen Peptides",
+      "dose": "Daily",
+      "timing": "With vitamin C",
+      "purpose": "Joint health",
+      "priority": "high",
+      "category": "recovery",
+      "evidenceLevel": "moderate",
+      "cost": "moderate",
+      "sideEffects": [],
+      "notes": "Particularly important for finger health in climbing"
+    },
+    {
+      "id": "b-complex",
+      "name": "B-Complex",
+      "dose": "1 tablet",
+      "timing": "Morning",
+      "purpose": "Energy metabolism",
+      "priority": "medium",
+      "category": "health",
+      "evidenceLevel": "strong",
+      "cost": "low",
+      "sideEffects": ["yellow urine (harmless)"],
+      "notes": "Essential for vegetarians due to B12 needs"
+    },
+    {
+      "id": "omega-3",
+      "name": "Omega-3 (Algae-based)",
+      "dose": "Daily",
+      "timing": "With meals",
+      "purpose": "Anti-inflammatory",
+      "priority": "medium",
+      "category": "health",
+      "evidenceLevel": "strong",
+      "cost": "moderate",
+      "sideEffects": ["fishy aftertaste"],
+      "notes": "Algae-based option for vegetarians"
+    },
+    {
+      "id": "magnesium",
+      "name": "Magnesium L-Threonate",
+      "dose": "3 capsules",
+      "timing": "Evening",
+      "purpose": "Sleep & recovery",
+      "priority": "medium",
+      "category": "recovery",
+      "evidenceLevel": "moderate",
+      "cost": "moderate",
+      "sideEffects": ["drowsiness", "digestive upset if overdosed"],
+      "notes": "Crucial for muscle function and sleep quality"
+    },
+    {
+      "id": "vitamin-d3",
+      "name": "Vitamin D3",
+      "dose": "2000-4000 IU",
+      "timing": "With fat",
+      "purpose": "Bone health & immunity",
+      "priority": "high",
+      "category": "health",
+      "evidenceLevel": "strong",
+      "cost": "low",
+      "sideEffects": [],
+      "notes": "Especially important for indoor climbers with limited sun exposure"
+    },
+    {
+      "id": "protein-powder",
+      "name": "Protein Powder",
+      "dose": "1-2 scoops",
+      "timing": "Post-workout",
+      "purpose": "Convenient protein",
+      "priority": "conditional",
+      "category": "nutrition",
+      "evidenceLevel": "strong",
+      "cost": "moderate",
+      "sideEffects": [],
+      "notes": "Priority increases if struggling to meet protein targets"
+    }
+  ],
+  "conditionalSupplements": [
+    {
+      "id": "lions-mane",
+      "name": "Lion's Mane Mushroom",
+      "dose": "500-1000mg daily",
+      "timing": "Morning",
+      "purpose": "Cognitive support",
+      "priority": "low",
+      "category": "cognitive",
+      "evidenceLevel": "emerging",
+      "cost": "moderate",
+      "condition": "desk work or mental fatigue"
+    },
+    {
+      "id": "l-theanine",
+      "name": "L-Theanine",
+      "dose": "100-200mg",
+      "timing": "With coffee",
+      "purpose": "Calm focus",
+      "priority": "low",
+      "category": "cognitive",
+      "evidenceLevel": "moderate",
+      "cost": "low",
+      "condition": "anxiety or caffeine sensitivity"
+    },
+    {
+      "id": "rhodiola",
+      "name": "Rhodiola Rosea",
+      "dose": "200-400mg",
+      "timing": "Morning",
+      "purpose": "Mental fatigue",
+      "priority": "low",
+      "category": "cognitive",
+      "evidenceLevel": "moderate",
+      "cost": "moderate",
+      "condition": "chronic stress or overtraining"
+    }
+  ],
+  "categories": {
+    "performance": {
+      "name": "Performance Enhancement",
+      "description": "Supplements that directly improve climbing performance",
+      "color": "green"
+    },
+    "recovery": {
+      "name": "Recovery Support", 
+      "description": "Supplements that aid in recovery and adaptation",
+      "color": "blue"
+    },
+    "health": {
+      "name": "General Health",
+      "description": "Foundational health supplements",
+      "color": "purple"
+    },
+    "nutrition": {
+      "name": "Nutritional Support",
+      "description": "Supplements that help meet nutritional needs",
+      "color": "orange"
+    },
+    "cognitive": {
+      "name": "Cognitive Support",
+      "description": "Supplements for mental performance and focus",
+      "color": "pink"
+    }
+  },
+  "priorityLevels": {
+    "high": {
+      "description": "Essential for climbing performance and health",
+      "color": "green"
+    },
+    "medium": {
+      "description": "Beneficial but not essential",
+      "color": "yellow"
+    },
+    "low": {
+      "description": "Optional based on individual needs",
+      "color": "gray"
+    },
+    "conditional": {
+      "description": "Priority depends on other factors",
+      "color": "blue"
+    }
+  }
+}

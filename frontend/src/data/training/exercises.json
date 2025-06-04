@@ -1,0 +1,270 @@
+{
+  "strengthExercises": [
+    {
+      "id": "max-hangs",
+      "name": "Max Hangs",
+      "category": "strength",
+      "primaryMuscles": ["fingers", "forearms", "lats"],
+      "equipment": ["hangboard"],
+      "difficulty": "intermediate",
+      "sets": 5,
+      "duration": "7-10 seconds",
+      "rest": "3 minutes between sets",
+      "progression": {
+        "beginner": "20mm edge, bodyweight",
+        "intermediate": "15mm edge, bodyweight",
+        "advanced": "12mm edge, +20% bodyweight"
+      },
+      "technique": [
+        "Half-crimp grip",
+        "Shoulders engaged", 
+        "Core tight",
+        "Focus on maximum recruitment"
+      ],
+      "safetyNotes": [
+        "Always warm up thoroughly",
+        "Start conservative with loading",
+        "Stop if fingers feel tweaky"
+      ]
+    },
+    {
+      "id": "weighted-pullups",
+      "name": "Weighted Pull-ups",
+      "category": "strength",
+      "primaryMuscles": ["lats", "biceps", "rhomboids"],
+      "equipment": ["pull-up bar", "weight belt"],
+      "difficulty": "intermediate",
+      "sets": 4,
+      "reps": "3-5",
+      "rest": "3-4 minutes",
+      "progression": {
+        "beginner": "Bodyweight to 5 reps",
+        "intermediate": "+10-25% bodyweight",
+        "advanced": "+25-50% bodyweight"
+      },
+      "technique": [
+        "Full range of motion",
+        "Control the negative",
+        "Chest to bar",
+        "No swinging"
+      ]
+    },
+    {
+      "id": "front-levers",
+      "name": "Front Lever Progressions",
+      "category": "strength",
+      "primaryMuscles": ["core", "lats", "posterior chain"],
+      "equipment": ["pull-up bar"],
+      "difficulty": "advanced",
+      "sets": 3,
+      "duration": "5-15 seconds",
+      "rest": "2-3 minutes",
+      "progression": {
+        "beginner": "Tuck front lever",
+        "intermediate": "Advanced tuck/single leg",
+        "advanced": "Full front lever"
+      },
+      "technique": [
+        "Straight body line",
+        "Shoulders depressed",
+        "Point toes",
+        "Breathe steadily"
+      ]
+    }
+  ],
+  "powerExercises": [
+    {
+      "id": "campus-ladders",
+      "name": "Campus Ladders",
+      "category": "power",
+      "primaryMuscles": ["fingers", "lats", "core"],
+      "equipment": ["campus board"],
+      "difficulty": "advanced",
+      "sets": 3,
+      "reps": "3-5 ladders",
+      "rest": "3-5 minutes between sets",
+      "progression": {
+        "intermediate": "1-3-5 medium rungs",
+        "advanced": "1-4-7 or 1-5-9",
+        "elite": "Small rungs or longer reaches"
+      },
+      "technique": [
+        "Explosive movement",
+        "Match hands briefly",
+        "Control the catch",
+        "Don't swing"
+      ],
+      "safetyNotes": [
+        "Extensive warm-up required",
+        "Only when fresh",
+        "Stop at first sign of fatigue"
+      ]
+    },
+    {
+      "id": "dynos",
+      "name": "Dynamic Movements",
+      "category": "power",
+      "primaryMuscles": ["full body", "power chain"],
+      "equipment": ["climbing wall"],
+      "difficulty": "intermediate",
+      "sets": "3-4",
+      "reps": "5-8 moves",
+      "rest": "3-4 minutes",
+      "progression": {
+        "beginner": "Small dynos, good holds",
+        "intermediate": "Medium dynos, varied holds",
+        "advanced": "Large dynos, poor holds"
+      },
+      "technique": [
+        "Compress before launch",
+        "Commit fully",
+        "Use legs for power",
+        "Practice catching"
+      ]
+    }
+  ],
+  "enduranceExercises": [
+    {
+      "id": "4x4-circuits",
+      "name": "4x4 Circuits",
+      "category": "endurance",
+      "primaryMuscles": ["forearms", "power endurance"],
+      "equipment": ["climbing wall"],
+      "difficulty": "intermediate",
+      "sets": 4,
+      "reps": "4 problems",
+      "rest": "No rest between problems, 4 min between sets",
+      "description": "Climb 4 problems in a row without rest, then rest 4 minutes. Repeat 4 times.",
+      "progression": {
+        "beginner": "V2-V4 problems",
+        "intermediate": "V4-V6 problems",
+        "advanced": "V6-V8 problems"
+      },
+      "technique": [
+        "Climb smoothly",
+        "Don't overgrip",
+        "Breathe on rests",
+        "Maintain good form"
+      ]
+    },
+    {
+      "id": "traversing",
+      "name": "Traverse Training",
+      "category": "endurance",
+      "primaryMuscles": ["forearms", "core", "legs"],
+      "equipment": ["climbing wall"],
+      "difficulty": "beginner",
+      "duration": "5-15 minutes",
+      "rest": "2-3 minutes",
+      "description": "Continuous sideways movement on wall",
+      "progression": {
+        "beginner": "Easy holds, 5 minutes",
+        "intermediate": "Varied holds, 10 minutes",
+        "advanced": "Difficult holds, 15+ minutes"
+      }
+    }
+  ],
+  "techniqueExercises": [
+    {
+      "id": "silent-feet",
+      "name": "Silent Feet Drills",
+      "category": "technique",
+      "primaryMuscles": ["legs", "core", "proprioception"],
+      "equipment": ["climbing wall"],
+      "difficulty": "beginner",
+      "duration": "15-30 minutes",
+      "description": "Climb without making any noise with feet",
+      "focus": [
+        "Precise foot placement",
+        "Weight transfer",
+        "Trust your feet",
+        "Core engagement"
+      ],
+      "progression": {
+        "beginner": "Easy routes, perfect silence",
+        "intermediate": "Moderate routes, maintain silence",
+        "advanced": "Difficult routes, silent and smooth"
+      }
+    },
+    {
+      "id": "precision-stepping",
+      "name": "Precision Stepping",
+      "category": "technique", 
+      "primaryMuscles": ["legs", "balance", "core"],
+      "equipment": ["climbing wall"],
+      "difficulty": "beginner",
+      "description": "Practice exact foot placement on small holds",
+      "sets": "Multiple climbs",
+      "focus": [
+        "Look at foot holds",
+        "Commit to placement",
+        "Don't readjust",
+        "Weight transfer"
+      ]
+    }
+  ],
+  "recoveryExercises": [
+    {
+      "id": "yoga",
+      "name": "Climbing-Specific Yoga",
+      "category": "recovery",
+      "primaryMuscles": ["flexibility", "mobility"],
+      "equipment": ["yoga mat"],
+      "difficulty": "beginner",
+      "duration": "20-60 minutes",
+      "focus": [
+        "Hip flexor stretches",
+        "Shoulder mobility",
+        "Spinal rotation", 
+        "Ankle mobility"
+      ]
+    },
+    {
+      "id": "mobility",
+      "name": "Mobility Work",
+      "category": "recovery",
+      "primaryMuscles": ["joints", "fascia"],
+      "equipment": ["foam roller", "lacrosse ball"],
+      "difficulty": "beginner",
+      "duration": "15-30 minutes",
+      "focus": [
+        "Trigger point release",
+        "Joint mobility",
+        "Muscle tension release",
+        "Blood flow"
+      ]
+    }
+  ],
+  "exerciseCategories": {
+    "strength": {
+      "name": "Strength Training",
+      "description": "Maximum strength development exercises",
+      "color": "red",
+      "frequency": "2-3x per week"
+    },
+    "power": {
+      "name": "Power Training", 
+      "description": "Explosive movement and recruitment",
+      "color": "orange",
+      "frequency": "1-2x per week"
+    },
+    "endurance": {
+      "name": "Endurance Training",
+      "description": "Power endurance and capacity work",
+      "color": "blue",
+      "frequency": "1-2x per week"
+    },
+    "technique": {
+      "name": "Technique Practice",
+      "description": "Movement skills and efficiency",
+      "color": "green",
+      "frequency": "2-3x per week"
+    },
+    "recovery": {
+      "name": "Recovery Work",
+      "description": "Active recovery and mobility",
+      "color": "purple",
+      "frequency": "Daily"
+    }
+  }
+}

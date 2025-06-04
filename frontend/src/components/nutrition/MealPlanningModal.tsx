@@ -42,7 +42,7 @@ export function MealPlanningModal({
       title: 'Daily Meal Plan',
       icon: Calendar,
       description: 'Complete day optimized for your climbing goals',
-      basePrompt: `Create a complete daily meal plan with ${targets.calories} calories and ${targets.protein}g protein. I'm a ${userProfile.age}-year-old vegetarian climber weighing ${userProfile.currentWeight}lbs, trying to ${userProfile.goal === 'cut' ? 'lose weight to' : 'reach'} ${userProfile.targetWeight}lbs.`,
+      basePrompt: targets && userProfile ? `Create a complete daily meal plan with ${targets.calories} calories and ${targets.protein}g protein. I'm a ${userProfile.age}-year-old vegetarian climber weighing ${userProfile.currentWeight}lbs, trying to ${userProfile.goal === 'cut' ? 'lose weight to' : 'reach'} ${userProfile.targetWeight}lbs.` : '',
       focusOptions: [
         { value: 'balanced', label: 'Balanced nutrition' },
         { value: 'high-protein', label: 'High protein focus' },
@@ -54,7 +54,7 @@ export function MealPlanningModal({
       title: 'Pre/Post Workout Meals',
       icon: Target,
       description: 'Optimize nutrition around climbing sessions',
-      basePrompt: `Design pre and post-workout meals for a ${userProfile.currentWeight}lb vegetarian climber. Pre-workout should fuel a climbing session, post-workout should optimize recovery with ${Math.round(targets.protein / 4)}g protein.`,
+      basePrompt: targets && userProfile ? `Design pre and post-workout meals for a ${userProfile.currentWeight}lb vegetarian climber. Pre-workout should fuel a climbing session, post-workout should optimize recovery with ${Math.round(targets.protein / 4)}g protein.` : '',
       focusOptions: [
         { value: 'performance', label: 'Performance focused' },
         { value: 'recovery', label: 'Recovery optimized' },
@@ -66,7 +66,7 @@ export function MealPlanningModal({
       title: 'High-Protein Strategy',
       icon: Target,
       description: 'Meet protein goals efficiently as a vegetarian',
-      basePrompt: `I need to hit ${targets.protein}g protein daily as a vegetarian climber. My current struggle is protein intake. Create a strategic meal plan using the most protein-efficient vegetarian foods.`,
+      basePrompt: targets ? `I need to hit ${targets.protein}g protein daily as a vegetarian climber. My current struggle is protein intake. Create a strategic meal plan using the most protein-efficient vegetarian foods.` : '',
       focusOptions: [
         { value: 'efficiency', label: 'Protein efficiency' },
         { value: 'variety', label: 'Diverse sources' },
@@ -78,7 +78,7 @@ export function MealPlanningModal({
       title: 'Weight Loss Focus',
       icon: Target,
       description: 'Cut to climbing weight while maintaining strength',
-      basePrompt: `Help me lose ${userProfile.currentWeight - userProfile.targetWeight}lbs while maintaining climbing strength. Create a meal plan with ${targets.calories} calories that keeps me full and energized.`,
+      basePrompt: targets && userProfile ? `Help me lose ${userProfile.currentWeight - userProfile.targetWeight}lbs while maintaining climbing strength. Create a meal plan with ${targets.calories} calories that keeps me full and energized.` : '',
       focusOptions: [
         { value: 'satiety', label: 'High satiety' },
         { value: 'volume', label: 'High volume foods' },
@@ -90,7 +90,7 @@ export function MealPlanningModal({
       title: 'Meal Prep Strategy',
       icon: Clock,
       description: 'Batch cooking for busy climbing schedule',
-      basePrompt: `Design a weekly meal prep strategy for a busy climber training 15+ hours per week. I need ${targets.calories} calories and ${targets.protein}g protein daily as a vegetarian.`,
+      basePrompt: targets ? `Design a weekly meal prep strategy for a busy climber training 15+ hours per week. I need ${targets.calories} calories and ${targets.protein}g protein daily as a vegetarian.` : '',
       focusOptions: [
         { value: 'efficiency', label: 'Time efficient' },
         { value: 'variety', label: 'Variety focused' },
@@ -168,7 +168,9 @@ export function MealPlanningModal({
     }
 
     // Add context
-    prompt += `\n\nContext: I'm a ${userProfile.age}-year-old vegetarian climber, ${userProfile.currentWeight}lbs, targeting ${userProfile.targetWeight}lbs. Daily targets: ${targets.calories} calories, ${targets.protein}g protein, ${targets.carbs}g carbs, ${targets.fat}g fat. Activity level: ${userProfile.activityLevel}. Goal: ${userProfile.goal}.`
+    if (targets && userProfile) {
+      prompt += `\n\nContext: I'm a ${userProfile.age}-year-old vegetarian climber, ${userProfile.currentWeight}lbs, targeting ${userProfile.targetWeight}lbs. Daily targets: ${targets.calories} calories, ${targets.protein}g protein, ${targets.carbs}g carbs, ${targets.fat}g fat. Activity level: ${userProfile.activityLevel}. Goal: ${userProfile.goal}.`
+    }
 
     return prompt
   }

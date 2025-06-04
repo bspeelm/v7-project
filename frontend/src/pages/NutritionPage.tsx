@@ -30,12 +30,18 @@ export function NutritionPage() {
     meals: []
   }
   
-  const nutritionTargets = {
+  const nutritionTargets = targets && userProfile ? {
     calories: { target: targets.calories, current: currentTotals.totalCalories },
     protein: { target: targets.protein, current: currentTotals.macros.protein },
     carbs: { target: targets.carbs, current: currentTotals.macros.carbs },
     fat: { target: targets.fat, current: currentTotals.macros.fat },
     weight: { current: userProfile.currentWeight, target: userProfile.targetWeight }
+  } : {
+    calories: { target: 2000, current: currentTotals.totalCalories },
+    protein: { target: 100, current: currentTotals.macros.protein },
+    carbs: { target: 250, current: currentTotals.macros.carbs },
+    fat: { target: 70, current: currentTotals.macros.fat },
+    weight: { current: 175, target: 165 }
   }
 
   const todaysMeals = currentTotals.meals || []
@@ -52,7 +58,7 @@ export function NutritionPage() {
     { name: 'B-Complex', dose: '1 tablet', timing: 'Morning', purpose: 'Energy metabolism', priority: 'medium' },
     { name: 'Omega-3', dose: 'Daily', timing: 'With meals', purpose: 'Anti-inflammatory', priority: 'medium' },
     { name: 'Magnesium L-Threonate', dose: '3 capsules', timing: 'Evening', purpose: 'Sleep & recovery', priority: 'medium' },
-    { name: 'Vitamin D3', dose: '2000-4000 IU', timing: 'With fat', purpose: 'Bone health & immunity', priority: userProfile.goal === 'cut' ? 'high' : 'medium' },
+    { name: 'Vitamin D3', dose: '2000-4000 IU', timing: 'With fat', purpose: 'Bone health & immunity', priority: userProfile?.goal === 'cut' ? 'high' : 'medium' },
     { name: 'Protein Powder', dose: '1-2 scoops', timing: 'Post-workout', purpose: 'Convenient protein', priority: nutritionTargets.protein.current < nutritionTargets.protein.target * 0.8 ? 'high' : 'low' }
   ].filter(s => s.priority === 'high' || s.priority === 'medium')
 
@@ -74,12 +80,12 @@ export function NutritionPage() {
     // Simulate AI call - replace with actual API call
     setTimeout(() => {
       const insights = [
-        `Based on your ${userProfile.currentWeight}lb weight and ${userProfile.goal} goal, I recommend increasing protein to ${Math.round(targets.protein * 1.1)}g on training days.`,
+        userProfile && targets ? `Based on your ${userProfile.currentWeight}lb weight and ${userProfile.goal} goal, I recommend increasing protein to ${Math.round(targets.protein * 1.1)}g on training days.` : 'Loading personalized recommendations...',
         "Consider timing 25g protein within 30 minutes post-workout for optimal recovery.",
         "Your vegetarian diet needs strategic B12 and iron monitoring - consider fortified foods."
       ]
       
-      insights.forEach(insight => addAiInsight(insight))
+      insights.forEach(insight => addAiInsight('dev-user-1', insight))
       setIsGeneratingPlan(false)
     }, 2000)
   }

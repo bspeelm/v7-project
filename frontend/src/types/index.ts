@@ -138,6 +138,24 @@ export interface Meal {
   notes?: string
 }
 
+export interface NutritionTargets {
+  calories: number
+  protein: number
+  carbs: number
+  fat: number
+  hydration: number // ml per day
+}
+
+export interface UserNutritionProfile {
+  currentWeight: number // lbs
+  targetWeight: number
+  height: number // inches
+  age: number
+  activityLevel: 'sedentary' | 'light' | 'moderate' | 'active' | 'very-active'
+  goal: 'maintain' | 'cut' | 'bulk' | 'recomp'
+  dietaryRestrictions: string[]
+}
+
 // Chat Types
 export interface ChatMessage {
   id: string

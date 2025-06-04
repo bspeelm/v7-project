@@ -1,0 +1,123 @@
+{
+  "devUserStats": {
+    "userId": "dev-user-1",
+    "currentWeek": {
+      "sessionsThisWeek": 4,
+      "successRate": 65,
+      "daysToGoal": 180,
+      "weekStartDate": "2025-06-02",
+      "sessions": [
+        {
+          "date": "2025-06-02",
+          "type": "training",
+          "duration": 90,
+          "gradesCompleted": ["V3"]
+        },
+        {
+          "date": "2025-06-04", 
+          "type": "gym",
+          "duration": 120,
+          "gradesCompleted": ["V4", "V5"]
+        }
+      ]
+    },
+    "trends": {
+      "last4Weeks": {
+        "averageSessions": 3.8,
+        "averageSuccessRate": 62,
+        "gradeProgression": [
+          { "week": "2025-05-06", "highestGrade": "V4", "numericGrade": 4 },
+          { "week": "2025-05-13", "highestGrade": "V4", "numericGrade": 4 },
+          { "week": "2025-05-20", "highestGrade": "V5", "numericGrade": 5 },
+          { "week": "2025-05-27", "highestGrade": "V5", "numericGrade": 5 },
+          { "week": "2025-06-03", "highestGrade": "V6", "numericGrade": 6 }
+        ]
+      },
+      "monthlyProgress": {
+        "may2025": {
+          "totalSessions": 16,
+          "uniqueGradesCompleted": ["V3", "V4", "V5"],
+          "newPersonalBests": 2,
+          "averageSessionDuration": 105
+        }
+      }
+    },
+    "goals": {
+      "primary": {
+        "grade": "V7",
+        "targetDate": "2025-12-31",
+        "currentProgress": 85.7,
+        "milestones": [
+          { "grade": "V4", "completed": true, "date": "2025-04-15" },
+          { "grade": "V5", "completed": true, "date": "2025-05-20" },
+          { "grade": "V6", "completed": true, "date": "2025-06-03" },
+          { "grade": "V7", "completed": false, "estimated": "2025-11-15" }
+        ]
+      }
+    },
+    "lastUpdated": "2025-06-04T20:30:00Z"
+  },
+  "statDefinitions": {
+    "sessionsThisWeek": {
+      "name": "Sessions This Week",
+      "description": "Number of climbing sessions completed this week",
+      "calculation": "Count of journal entries with sessionType != 'rest'",
+      "icon": "Calendar"
+    },
+    "successRate": {
+      "name": "Success Rate",
+      "description": "Percentage of attempted grades that were completed",
+      "calculation": "(gradesCompleted.length / gradesAttempted.length) * 100",
+      "period": "Last 30 days",
+      "icon": "Activity"
+    },
+    "daysToGoal": {
+      "name": "Days to Goal",
+      "description": "Estimated days until reaching V7 based on current progression",
+      "calculation": "Based on grade progression trend analysis",
+      "icon": "Target"
+    },
+    "highestGrade": {
+      "name": "Highest Grade",
+      "description": "Highest grade completed to date",
+      "calculation": "Max gradeNumeric from benchmark sends",
+      "icon": "TrendingUp"
+    }
+  },
+  "progressCalculations": {
+    "gradeProgressionFormula": {
+      "description": "Progress towards V7 calculated as percentage",
+      "formula": "((currentHighestGrade - startingGrade) / (targetGrade - startingGrade)) * 100",
+      "example": "V6 progress to V7: ((6 - 2) / (7 - 2)) * 100 = 80%"
+    },
+    "projectedCompletion": {
+      "description": "Estimated completion date based on progression rate",
+      "factors": [
+        "Current grade progression rate",
+        "Training consistency",
+        "Injury history",
+        "Seasonal factors"
+      ]
+    }
+  },
+  "defaultStats": {
+    "newUser": {
+      "sessionsThisWeek": 0,
+      "successRate": 0,
+      "daysToGoal": 365,
+      "highestGrade": "V0"
+    },
+    "beginner": {
+      "sessionsThisWeek": 2,
+      "successRate": 70,
+      "daysToGoal": 300,
+      "highestGrade": "V2"
+    },
+    "intermediate": {
+      "sessionsThisWeek": 3,
+      "successRate": 65,
+      "daysToGoal": 200,
+      "highestGrade": "V4"
+    }
+  }
+}

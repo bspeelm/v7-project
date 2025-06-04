@@ -1,0 +1,84 @@
+{
+  "devUserProfile": {
+    "userId": "dev-user-1",
+    "age": 42,
+    "weight": 175,
+    "height": 178,
+    "yearsClimbing": 3,
+    "currentGrades": {
+      "indoor": {
+        "slab": "V6",
+        "vertical": "V5", 
+        "overhang": "V4"
+      },
+      "outdoor": {
+        "sport": "5.11a",
+        "boulder": "V3",
+        "trad": "5.10a"
+      }
+    },
+    "goals": [
+      {
+        "id": "primary-goal",
+        "grade": "V7",
+        "targetDate": "2025-12-31",
+        "type": "boulder",
+        "description": "Climb first V7 boulder problem",
+        "completed": false
+      }
+    ],
+    "weaknesses": [
+      "Overhang climbing",
+      "Dynamic moves", 
+      "Core tension",
+      "Power endurance"
+    ],
+    "strengths": [
+      "Crimps",
+      "Technical footwork",
+      "Route reading",
+      "Endurance"
+    ],
+    "dietaryRestrictions": ["Vegetarian"],
+    "injuryHistory": [
+      {
+        "id": "injury-1",
+        "type": "Finger strain",
+        "date": "2024-08-15",
+        "duration": "3 weeks",
+        "recovered": true,
+        "notes": "A2 pulley strain on ring finger, conservative rehab"
+      }
+    ],
+    "updatedAt": "2025-06-04T00:00:00Z"
+  },
+  "profileTemplates": {
+    "beginner": {
+      "yearsClimbing": 1,
+      "currentGrades": {
+        "indoor": { "slab": "V2", "vertical": "V1", "overhang": "V0" },
+        "outdoor": { "sport": "5.8", "boulder": "V1" }
+      },
+      "commonWeaknesses": ["Technique", "Confidence", "Fear", "Basic strength"],
+      "commonStrengths": ["Enthusiasm", "Flexibility", "Learning ability"]
+    },
+    "intermediate": {
+      "yearsClimbing": 3,
+      "currentGrades": {
+        "indoor": { "slab": "V5", "vertical": "V4", "overhang": "V3" },
+        "outdoor": { "sport": "5.11a", "boulder": "V4" }
+      },
+      "commonWeaknesses": ["Power", "Mental game", "Specific techniques"],
+      "commonStrengths": ["Endurance", "Basic technique", "Problem solving"]
+    },
+    "advanced": {
+      "yearsClimbing": 7,
+      "currentGrades": {
+        "indoor": { "slab": "V8", "vertical": "V7", "overhang": "V6" },
+        "outdoor": { "sport": "5.12c", "boulder": "V7" }
+      },
+      "commonWeaknesses": ["Specific weaknesses", "Plateau breaking"],
+      "commonStrengths": ["Technique", "Strength", "Mental game", "Experience"]
+    }
+  }
+}

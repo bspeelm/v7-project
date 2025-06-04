@@ -1,0 +1,132 @@
+{
+  "dailyMealTemplate": {
+    "name": "Daily Meal Template",
+    "description": "Optimized for 125g protein and 2300 calories",
+    "targetCalories": 2300,
+    "targetProtein": 125,
+    "meals": [
+      {
+        "id": "breakfast",
+        "time": "Breakfast",
+        "targetProtein": 30,
+        "targetCalories": 350,
+        "foods": "Oatmeal (2/3 cup): 5g + Orgain protein (2 scoops): 21g + Blueberries",
+        "timing": "7:00-8:00 AM",
+        "notes": "Sets protein foundation for the day"
+      },
+      {
+        "id": "mid-morning",
+        "time": "Mid-Morning",
+        "targetProtein": 16,
+        "targetCalories": 90,
+        "foods": "Greek yogurt (0% fat): 16g",
+        "timing": "10:00-11:00 AM",
+        "notes": "Easy protein boost between meals"
+      },
+      {
+        "id": "lunch",
+        "time": "Lunch",
+        "targetProtein": 30,
+        "targetCalories": 400,
+        "foods": "Lentil/chickpea pasta (1 cup): 25g + Vegetables",
+        "timing": "12:00-1:00 PM",
+        "notes": "Substantial meal with complex carbs"
+      },
+      {
+        "id": "post-workout",
+        "time": "Post-Workout",
+        "targetProtein": 21,
+        "targetCalories": 160,
+        "foods": "Orgain shake: 21g",
+        "timing": "Within 30 min of workout",
+        "notes": "Fast-absorbing protein for recovery"
+      },
+      {
+        "id": "dinner",
+        "time": "Dinner",
+        "targetProtein": 30,
+        "targetCalories": 500,
+        "foods": "Tofu (5oz): 12g + Quinoa (1 cup): 8g + Lentils (1/2 cup): 9g + Vegetables",
+        "timing": "6:00-7:00 PM",
+        "notes": "Largest meal with complete protein combinations"
+      },
+      {
+        "id": "evening",
+        "time": "Evening",
+        "targetProtein": 16,
+        "targetCalories": 90,
+        "foods": "Greek yogurt: 16g",
+        "timing": "8:00-9:00 PM",
+        "notes": "Casein protein for overnight recovery"
+      }
+    ],
+    "dailyTotals": {
+      "protein": 143,
+      "caloriesFromProtein": 1590,
+      "remainingCalories": "610-810 calories for healthy fats, additional carbs, vegetables"
+    }
+  },
+  "mealTemplatesByGoal": {
+    "cut": {
+      "name": "Weight Loss Meal Template",
+      "targetCalories": 1800,
+      "targetProtein": 140,
+      "emphasis": "High protein, high volume, low calories"
+    },
+    "bulk": {
+      "name": "Muscle Gain Meal Template", 
+      "targetCalories": 2800,
+      "targetProtein": 140,
+      "emphasis": "Calorie dense, nutrient timing"
+    },
+    "maintain": {
+      "name": "Maintenance Meal Template",
+      "targetCalories": 2300,
+      "targetProtein": 125,
+      "emphasis": "Balanced nutrition, consistent energy"
+    }
+  },
+  "mealTimingGuidelines": {
+    "pre-workout": {
+      "timing": "1-3 hours before",
+      "focus": "Carbohydrates for energy, moderate protein",
+      "avoid": "High fat, high fiber",
+      "examples": ["Banana + oatmeal", "Toast with honey"]
+    },
+    "post-workout": {
+      "timing": "Within 30-60 minutes",
+      "focus": "Protein for recovery, carbs to replenish glycogen",
+      "ratio": "3:1 or 4:1 carbs to protein",
+      "examples": ["Protein shake + banana", "Greek yogurt + berries"]
+    },
+    "bedtime": {
+      "timing": "1-2 hours before bed",
+      "focus": "Slow-digesting protein (casein)",
+      "avoid": "High sugar, caffeine",
+      "examples": ["Greek yogurt", "Cottage cheese", "Casein protein"]
+    }
+  },
+  "vegetarianProteinCombinations": [
+    {
+      "combination": "Rice + Beans",
+      "description": "Classic complete protein",
+      "ratio": "3:1 rice to beans",
+      "protein": "Complete amino acid profile"
+    },
+    {
+      "combination": "Quinoa + Any legume",
+      "description": "Quinoa is already complete protein",
+      "protein": "Enhanced amino acid profile"
+    },
+    {
+      "combination": "Hummus + Whole grain pita",
+      "description": "Middle Eastern complete protein",
+      "protein": "Complementary amino acids"
+    },
+    {
+      "combination": "Peanut butter + Whole grain bread",
+      "description": "Simple complete protein combo",
+      "protein": "Lysine from grains, methionine from nuts"
+    }
+  ]
+}

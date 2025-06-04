@@ -1,0 +1,137 @@
+{
+  "mealPlanOptions": [
+    {
+      "id": "daily-plan",
+      "title": "Daily Meal Plan",
+      "description": "Complete day optimized for your goals",
+      "icon": "Calendar",
+      "color": "text-green-600",
+      "category": "planning",
+      "basePrompt": "Create a complete daily meal plan with {calories} calories and {protein}g protein. I'm a {age}-year-old vegetarian climber weighing {currentWeight}lbs, trying to {goalDescription} {targetWeight}lbs.",
+      "focusOptions": [
+        { "value": "balanced", "label": "Balanced nutrition" },
+        { "value": "high-protein", "label": "High protein focus" },
+        { "value": "energy", "label": "Sustained energy" },
+        { "value": "recovery", "label": "Recovery focused" }
+      ]
+    },
+    {
+      "id": "workout-nutrition",
+      "title": "Pre/Post Workout Meals",
+      "description": "Optimize nutrition around climbing sessions",
+      "icon": "Target",
+      "color": "text-blue-600",
+      "category": "performance",
+      "basePrompt": "Design pre and post-workout meals for a {currentWeight}lb vegetarian climber. Pre-workout should fuel a climbing session, post-workout should optimize recovery with {postWorkoutProtein}g protein.",
+      "focusOptions": [
+        { "value": "performance", "label": "Performance focused" },
+        { "value": "recovery", "label": "Recovery optimized" },
+        { "value": "quick", "label": "Quick & portable" },
+        { "value": "gentle", "label": "Easy on stomach" }
+      ]
+    },
+    {
+      "id": "high-protein",
+      "title": "High-Protein Strategy",
+      "description": "Meet protein goals efficiently as a vegetarian",
+      "icon": "Target",
+      "color": "text-purple-600",
+      "category": "macros",
+      "basePrompt": "I need to hit {protein}g protein daily as a vegetarian climber. My current struggle is protein intake. Create a strategic meal plan using the most protein-efficient vegetarian foods.",
+      "focusOptions": [
+        { "value": "efficiency", "label": "Protein efficiency" },
+        { "value": "variety", "label": "Diverse sources" },
+        { "value": "budget", "label": "Budget-friendly" },
+        { "value": "convenience", "label": "Convenience focused" }
+      ]
+    },
+    {
+      "id": "weight-loss",
+      "title": "Weight Loss Focus",
+      "description": "Cut to climbing weight while maintaining strength",
+      "icon": "Target",
+      "color": "text-orange-600",
+      "category": "goals",
+      "basePrompt": "Help me lose {weightToLose}lbs while maintaining climbing strength. Create a meal plan with {calories} calories that keeps me full and energized.",
+      "focusOptions": [
+        { "value": "satiety", "label": "High satiety" },
+        { "value": "volume", "label": "High volume foods" },
+        { "value": "steady", "label": "Steady energy" },
+        { "value": "cravings", "label": "Craving control" }
+      ]
+    },
+    {
+      "id": "meal-prep",
+      "title": "Meal Prep Strategy",
+      "description": "Batch cooking for busy climbing schedule",
+      "icon": "Clock",
+      "color": "text-indigo-600",
+      "category": "lifestyle",
+      "basePrompt": "Design a weekly meal prep strategy for a busy climber training 15+ hours per week. I need {calories} calories and {protein}g protein daily as a vegetarian.",
+      "focusOptions": [
+        { "value": "efficiency", "label": "Time efficient" },
+        { "value": "variety", "label": "Variety focused" },
+        { "value": "portable", "label": "Portable meals" },
+        { "value": "freezer", "label": "Freezer-friendly" }
+      ]
+    },
+    {
+      "id": "custom",
+      "title": "Custom AI Request",
+      "description": "Structured nutrition planning request",
+      "icon": "Brain",
+      "color": "text-pink-600",
+      "category": "custom",
+      "basePrompt": "",
+      "focusOptions": [
+        { "value": "general", "label": "General nutrition" },
+        { "value": "specific", "label": "Specific situation" },
+        { "value": "troubleshooting", "label": "Problem solving" },
+        { "value": "optimization", "label": "Optimization" }
+      ]
+    }
+  ],
+  "categories": {
+    "planning": {
+      "name": "Meal Planning",
+      "description": "Overall meal structure and daily planning"
+    },
+    "performance": {
+      "name": "Performance Nutrition",
+      "description": "Nutrition timing around training and climbing"
+    },
+    "macros": {
+      "name": "Macronutrient Focus",
+      "description": "Specific focus on protein, carbs, or fats"
+    },
+    "goals": {
+      "name": "Goal-Specific",
+      "description": "Nutrition plans tailored to specific body composition goals"
+    },
+    "lifestyle": {
+      "name": "Lifestyle Integration",
+      "description": "Fitting nutrition into busy schedules"
+    },
+    "custom": {
+      "name": "Custom Requests",
+      "description": "Flexible nutrition questions and planning"
+    }
+  },
+  "commonCustomizationOptions": {
+    "timeframe": [
+      { "value": "single-day", "label": "Single day" },
+      { "value": "weekly", "label": "Full week" }
+    ],
+    "preparation": [
+      { "value": "any", "label": "Any preparation level" },
+      { "value": "minimal", "label": "Minimal prep/cooking" },
+      { "value": "batch", "label": "Batch cooking friendly" },
+      { "value": "advanced", "label": "Complex preparation OK" }
+    ],
+    "budget": [
+      { "value": "low", "label": "Budget-conscious" },
+      { "value": "moderate", "label": "Moderate budget" },
+      { "value": "high", "label": "Premium ingredients OK" }
+    ]
+  }
+}

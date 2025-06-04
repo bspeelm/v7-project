@@ -1,0 +1,78 @@
+{
+  "defaultInsights": [
+    "Your protein intake is 60% below target. Focus on adding a protein source to each meal.",
+    "Consider timing protein intake around workouts for better recovery.",
+    "Your vegetarian diet needs strategic planning - combine legumes with grains for complete proteins."
+  ],
+  "conditionalInsights": {
+    "lowProtein": [
+      "Protein deficit detected: Currently {current}g vs {target}g target (-{deficit}g)",
+      "Add a protein shake or Greek yogurt to boost your daily intake",
+      "Focus on protein-efficient foods under 8 cal/g protein ratio"
+    ],
+    "lowCalories": [
+      "Calorie intake appears too low for your activity level and goals",
+      "Under-eating can hurt climbing performance and recovery",
+      "Consider adding healthy fats like nuts, avocado, or olive oil"
+    ],
+    "highProtein": [
+      "Great job hitting your protein targets consistently!",
+      "Your protein timing around workouts looks optimal",
+      "Consider if you need this much protein or can allocate calories elsewhere"
+    ],
+    "vegetarianSpecific": [
+      "Monitor B12 levels - consider a B-complex supplement",
+      "Iron absorption can be enhanced by eating vitamin C with iron-rich foods",
+      "Combine incomplete proteins to create complete amino acid profiles"
+    ],
+    "cuttingPhase": [
+      "Increase protein to 1.2g per lb bodyweight to preserve muscle while cutting",
+      "Focus on high-volume, low-calorie foods to maintain satiety",
+      "Don't cut calories too aggressively - aim for 1-2 lbs loss per week"
+    ],
+    "bulkingPhase": [
+      "Aim for a 300-500 calorie surplus for lean gains",
+      "Don't forget to eat enough carbs to fuel your climbing sessions", 
+      "Track weight gain - aim for 0.5-1 lb per week"
+    ]
+  },
+  "insightTriggers": {
+    "proteinDeficit": {
+      "condition": "current < target * 0.8",
+      "insights": "lowProtein"
+    },
+    "calorieDeficit": {
+      "condition": "current < target * 0.7", 
+      "insights": "lowCalories"
+    },
+    "proteinExcess": {
+      "condition": "current > target * 1.3",
+      "insights": "highProtein"
+    },
+    "isVegetarian": {
+      "condition": "dietaryRestrictions.includes('vegetarian')",
+      "insights": "vegetarianSpecific"
+    },
+    "isCutting": {
+      "condition": "goal === 'cut'",
+      "insights": "cuttingPhase"
+    },
+    "isBulking": {
+      "condition": "goal === 'bulk'",
+      "insights": "bulkingPhase"
+    }
+  },
+  "achievementInsights": [
+    "Congratulations on hitting your protein goal 3 days in a row!",
+    "Your meal timing around workouts has been consistent - great job!",
+    "You've successfully increased your daily protein by 25g this week",
+    "Your vegetarian meal planning is getting more efficient",
+    "Great progress on your weight loss goal while maintaining protein intake"
+  ],
+  "weeklyInsights": [
+    "Your average protein intake this week was {avg}g - {status} from your {target}g target",
+    "You logged meals {days} out of 7 days this week - consistency is key!",
+    "Your most protein-efficient day was {day} with {efficiency} cal/g protein",
+    "Consider meal prepping on {day} to improve consistency next week"
+  ]
+}

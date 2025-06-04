@@ -1,0 +1,162 @@
+{
+  "devUserEntries": [
+    {
+      "id": "entry-1",
+      "userId": "dev-user-1",
+      "date": "2025-06-04",
+      "sessionType": "gym",
+      "duration": 120,
+      "location": "Brooklyn Boulders",
+      "gradesAttempted": ["V4", "V5", "V6"],
+      "gradesCompleted": ["V4", "V5"],
+      "physicalCondition": {
+        "energy": 8,
+        "soreness": {
+          "shoulders": 2,
+          "fingers": 1
+        },
+        "injuries": []
+      },
+      "technicalFocus": ["Overhangs", "Dynamic moves"],
+      "mentalState": "Confident and focused",
+      "notes": "Great session! Finally sent that overhang V5 I've been working on. The key was better hip positioning and trusting my feet. Felt like a breakthrough for my overhang climbing. Need to work more on reading sequences before jumping on.",
+      "media": [],
+      "createdAt": "2025-06-04T20:30:00Z"
+    },
+    {
+      "id": "entry-2",
+      "userId": "dev-user-1",
+      "date": "2025-06-02",
+      "sessionType": "training",
+      "duration": 90,
+      "location": "Local Gym",
+      "gradesAttempted": ["V3", "V4"],
+      "gradesCompleted": ["V3"],
+      "physicalCondition": {
+        "energy": 6,
+        "soreness": {
+          "forearms": 3
+        },
+        "injuries": []
+      },
+      "technicalFocus": ["Hangboard", "Core strength"],
+      "mentalState": "Focused on training",
+      "notes": "Strength training day. Did hangboard protocol and core work. Feeling stronger but need to work on power. Hangboard sessions getting easier - might be time to add weight or move to smaller edge.",
+      "media": [],
+      "createdAt": "2025-06-02T19:15:00Z"
+    },
+    {
+      "id": "entry-3",
+      "userId": "dev-user-1",
+      "date": "2025-05-30",
+      "sessionType": "outdoor",
+      "duration": 240,
+      "location": "Central Park Boulders",
+      "gradesAttempted": ["V2", "V3", "V4"],
+      "gradesCompleted": ["V2", "V3"],
+      "physicalCondition": {
+        "energy": 7,
+        "soreness": {
+          "legs": 2,
+          "core": 1
+        },
+        "injuries": []
+      },
+      "technicalFocus": ["Real rock movement", "Route reading"],
+      "mentalState": "Excited but nervous about outdoor",
+      "notes": "First outdoor session in a while. Rock feels so different from plastic! Foot placement is more critical and the holds feel different. Made good progress on a V3 but couldn't finish it. Need more outdoor time to adapt.",
+      "media": [],
+      "createdAt": "2025-05-30T16:45:00Z"
+    }
+  ],
+  "sessionTypes": {
+    "gym": {
+      "name": "Gym Session",
+      "description": "Indoor climbing gym",
+      "icon": "🏋️",
+      "color": "blue"
+    },
+    "outdoor": {
+      "name": "Outdoor Climbing", 
+      "description": "Real rock climbing",
+      "icon": "🏔️",
+      "color": "green"
+    },
+    "training": {
+      "name": "Training Session",
+      "description": "Structured training focus",
+      "icon": "💪",
+      "color": "red"
+    },
+    "rest": {
+      "name": "Rest Day",
+      "description": "Recovery and rest",
+      "icon": "😴",
+      "color": "gray"
+    }
+  },
+  "entryTemplate": {
+    "id": "",
+    "userId": "",
+    "date": "",
+    "sessionType": "gym",
+    "duration": 120,
+    "location": "",
+    "gradesAttempted": [],
+    "gradesCompleted": [],
+    "physicalCondition": {
+      "energy": 5,
+      "soreness": {},
+      "injuries": []
+    },
+    "technicalFocus": [],
+    "mentalState": "",
+    "notes": "",
+    "media": [],
+    "createdAt": ""
+  },
+  "commonTechnicalFocusAreas": [
+    "Footwork",
+    "Body positioning",
+    "Route reading",
+    "Grip strength",
+    "Core tension",
+    "Dynamic moves",
+    "Slab technique",
+    "Overhang climbing",
+    "Crimping",
+    "Pinching",
+    "Mantling",
+    "Heel hooks",
+    "Toe hooks",
+    "Flagging",
+    "Stemming",
+    "Matching",
+    "Dead pointing",
+    "Campus moves"
+  ],
+  "energyLevels": {
+    "1": "Exhausted",
+    "2": "Very tired",
+    "3": "Tired",
+    "4": "Below average",
+    "5": "Average",
+    "6": "Above average", 
+    "7": "Good energy",
+    "8": "High energy",
+    "9": "Very high energy",
+    "10": "Peak energy"
+  },
+  "sorenessAreas": [
+    "fingers",
+    "forearms",
+    "biceps",
+    "shoulders",
+    "back",
+    "core",
+    "hips",
+    "legs",
+    "calves",
+    "feet"
+  ]
+}

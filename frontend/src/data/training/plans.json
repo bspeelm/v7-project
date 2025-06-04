@@ -1,0 +1,163 @@
+{
+  "devUserPlan": {
+    "id": "v7-power-development",
+    "userId": "dev-user-1",
+    "name": "V7 Power Development",
+    "description": "12-week periodized program focusing on power and strength for V7 breakthrough",
+    "startDate": "2025-06-01",
+    "currentWeek": 2,
+    "totalWeeks": 12,
+    "phase": "strength",
+    "goals": [
+      "Increase max finger strength by 20%",
+      "Develop power endurance for longer V6+ problems",
+      "Improve core tension for overhang climbing"
+    ],
+    "weeklyStructure": {
+      "monday": {
+        "type": "strength",
+        "focus": ["Hangboard", "Core strength"],
+        "duration": 90,
+        "intensity": "high",
+        "exercises": ["max-hangs", "weighted-pullups", "front-levers"]
+      },
+      "tuesday": {
+        "type": "technique", 
+        "focus": ["Footwork", "Body positioning"],
+        "duration": 120,
+        "intensity": "moderate",
+        "exercises": ["silent-feet", "precision-stepping", "body-positioning"]
+      },
+      "wednesday": {
+        "type": "rest",
+        "focus": ["Recovery"],
+        "duration": 0,
+        "intensity": "low",
+        "exercises": []
+      },
+      "thursday": {
+        "type": "power",
+        "focus": ["Campus board", "Dynamic moves"],
+        "duration": 75,
+        "intensity": "high", 
+        "exercises": ["campus-ladders", "dynos", "explosive-pullups"]
+      },
+      "friday": {
+        "type": "endurance",
+        "focus": ["4x4s", "Circuits"],
+        "duration": 90,
+        "intensity": "moderate",
+        "exercises": ["4x4-circuits", "traversing", "aerobic-capacity"]
+      },
+      "saturday": {
+        "type": "outdoor",
+        "focus": ["Project work", "Movement"],
+        "duration": 240,
+        "intensity": "varied",
+        "exercises": ["outdoor-bouldering", "project-attempts"]
+      },
+      "sunday": {
+        "type": "rest",
+        "focus": ["Active recovery"],
+        "duration": 30,
+        "intensity": "low",
+        "exercises": ["yoga", "mobility"]
+      }
+    },
+    "progressions": {
+      "weeks1-3": {
+        "phase": "Anatomical Adaptation",
+        "hangboard": "15mm edge, bodyweight",
+        "volume": "moderate",
+        "intensity": "70-80%"
+      },
+      "weeks4-6": {
+        "phase": "Max Strength", 
+        "hangboard": "12mm edge, +10-20lbs",
+        "volume": "low",
+        "intensity": "85-95%"
+      },
+      "weeks7-9": {
+        "phase": "Power Development",
+        "hangboard": "15mm edge, explosive",
+        "volume": "moderate",
+        "intensity": "80-90%"
+      },
+      "weeks10-12": {
+        "phase": "Peak Performance",
+        "hangboard": "varied edges, maintenance",
+        "volume": "low",
+        "intensity": "60-80%"
+      }
+    },
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00Z"
+  },
+  "planTemplates": {
+    "beginner": {
+      "name": "Beginner Fundamentals",
+      "totalWeeks": 8,
+      "focus": ["Technique", "Base fitness", "Movement"],
+      "sessionsPerWeek": 3,
+      "phases": ["Foundation", "Progression"]
+    },
+    "intermediate": {
+      "name": "Intermediate Development", 
+      "totalWeeks": 12,
+      "focus": ["Strength", "Power", "Technique refinement"],
+      "sessionsPerWeek": 4,
+      "phases": ["Strength", "Power", "Integration"]
+    },
+    "advanced": {
+      "name": "Advanced Performance",
+      "totalWeeks": 16,
+      "focus": ["Peak strength", "Power endurance", "Mental game"],
+      "sessionsPerWeek": 5,
+      "phases": ["Strength", "Power", "Peak", "Taper"]
+    }
+  },
+  "sessionTypes": {
+    "strength": {
+      "name": "Strength Training",
+      "description": "Maximum strength development",
+      "duration": "60-90 minutes",
+      "frequency": "2-3x per week",
+      "restBetween": "48-72 hours"
+    },
+    "power": {
+      "name": "Power Training",
+      "description": "Explosive movement and recruitment",
+      "duration": "45-75 minutes", 
+      "frequency": "1-2x per week",
+      "restBetween": "48-72 hours"
+    },
+    "endurance": {
+      "name": "Endurance Training",
+      "description": "Power endurance and aerobic capacity",
+      "duration": "60-120 minutes",
+      "frequency": "1-2x per week",
+      "restBetween": "24-48 hours"
+    },
+    "technique": {
+      "name": "Technique Practice",
+      "description": "Movement skills and efficiency",
+      "duration": "90-120 minutes",
+      "frequency": "2-3x per week",
+      "restBetween": "24 hours"
+    },
+    "outdoor": {
+      "name": "Outdoor Climbing",
+      "description": "Real rock application",
+      "duration": "2-8 hours",
+      "frequency": "1-2x per week",
+      "restBetween": "24-48 hours"
+    },
+    "rest": {
+      "name": "Rest/Recovery",
+      "description": "Complete rest or active recovery",
+      "duration": "0-60 minutes",
+      "frequency": "2-3x per week",
+      "restBetween": "N/A"
+    }
+  }
+}

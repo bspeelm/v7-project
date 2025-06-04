@@ -1,0 +1,143 @@
+{
+  "proteinSources": [
+    {
+      "id": "greek-yogurt",
+      "food": "Greek Yogurt (0% fat)",
+      "efficiency": 5.6,
+      "protein": 16,
+      "calories": 90,
+      "serving": "1 cup (170g)",
+      "notes": "Excellent post-workout option with casein protein",
+      "category": "dairy",
+      "dietaryTags": ["vegetarian"],
+      "timing": ["post-workout", "snack"],
+      "preparation": "ready-to-eat"
+    },
+    {
+      "id": "protein-isolate",
+      "food": "Protein Isolate",
+      "efficiency": 4.0,
+      "protein": 25,
+      "calories": 100,
+      "serving": "1 scoop (30g)",
+      "notes": "Fastest absorption, ideal for post-workout",
+      "category": "supplement",
+      "dietaryTags": ["vegetarian", "vegan"],
+      "timing": ["post-workout", "between-meals"],
+      "preparation": "powder-mix"
+    },
+    {
+      "id": "orgain-protein",
+      "food": "Orgain Protein Powder",
+      "efficiency": 7.6,
+      "protein": 21,
+      "calories": 160,
+      "serving": "1 scoop (46g)",
+      "notes": "Plant-based, good for vegetarians but higher calories",
+      "category": "supplement",
+      "dietaryTags": ["vegetarian", "vegan"],
+      "timing": ["post-workout", "breakfast"],
+      "preparation": "powder-mix"
+    },
+    {
+      "id": "tofu-extra-firm",
+      "food": "Tofu (Extra Firm)",
+      "efficiency": 7.0,
+      "protein": 10,
+      "calories": 70,
+      "serving": "3 oz (85g)",
+      "notes": "Versatile, complete protein, good for main meals",
+      "category": "legume",
+      "dietaryTags": ["vegetarian", "vegan"],
+      "timing": ["lunch", "dinner"],
+      "preparation": "cooking-required"
+    },
+    {
+      "id": "lentils-cooked",
+      "food": "Lentils (cooked)",
+      "efficiency": 8.5,
+      "protein": 9,
+      "calories": 115,
+      "serving": "1/2 cup (99g)",
+      "notes": "High fiber, pair with rice for complete protein",
+      "category": "legume",
+      "dietaryTags": ["vegetarian", "vegan"],
+      "timing": ["lunch", "dinner"],
+      "preparation": "cooking-required"
+    },
+    {
+      "id": "seitan",
+      "food": "Seitan",
+      "efficiency": 4.8,
+      "protein": 21,
+      "calories": 100,
+      "serving": "3 oz (85g)",
+      "notes": "Wheat protein, very high protein density",
+      "category": "wheat-protein",
+      "dietaryTags": ["vegetarian", "vegan"],
+      "timing": ["lunch", "dinner"],
+      "preparation": "cooking-required"
+    },
+    {
+      "id": "tempeh",
+      "food": "Tempeh",
+      "efficiency": 8.0,
+      "protein": 16,
+      "calories": 160,
+      "serving": "3 oz (85g)",
+      "notes": "Fermented soy, complete protein with probiotics",
+      "category": "legume",
+      "dietaryTags": ["vegetarian", "vegan"],
+      "timing": ["lunch", "dinner"],
+      "preparation": "cooking-required"
+    },
+    {
+      "id": "quinoa-cooked",
+      "food": "Quinoa (cooked)",
+      "efficiency": 13.9,
+      "protein": 8,
+      "calories": 222,
+      "serving": "1 cup (185g)",
+      "notes": "Complete protein grain, good carb source",
+      "category": "grain",
+      "dietaryTags": ["vegetarian", "vegan"],
+      "timing": ["lunch", "dinner"],
+      "preparation": "cooking-required"
+    }
+  ],
+  "categories": {
+    "dairy": {
+      "name": "Dairy Products",
+      "description": "Milk-based protein sources",
+      "suitableFor": ["vegetarian"]
+    },
+    "supplement": {
+      "name": "Protein Supplements",
+      "description": "Concentrated protein powders",
+      "suitableFor": ["vegetarian", "vegan"]
+    },
+    "legume": {
+      "name": "Legumes & Soy",
+      "description": "Beans, lentils, and soy products",
+      "suitableFor": ["vegetarian", "vegan"]
+    },
+    "wheat-protein": {
+      "name": "Wheat Protein",
+      "description": "Seitan and wheat-based proteins",
+      "suitableFor": ["vegetarian", "vegan"],
+      "restrictions": ["gluten-free"]
+    },
+    "grain": {
+      "name": "Protein-Rich Grains",
+      "description": "Grains with significant protein content",
+      "suitableFor": ["vegetarian", "vegan"]
+    }
+  },
+  "efficiencyTiers": {
+    "excellent": { "maxEfficiency": 5.0, "color": "green", "label": "Excellent (Under 5 cal/g)" },
+    "very-good": { "maxEfficiency": 6.0, "color": "blue", "label": "Very Good (5-6 cal/g)" },
+    "good": { "maxEfficiency": 8.0, "color": "yellow", "label": "Good (6-8 cal/g)" },
+    "moderate": { "maxEfficiency": 10.0, "color": "orange", "label": "Moderate (8-10 cal/g)" },
+    "avoid-cutting": { "maxEfficiency": 999, "color": "red", "label": "Avoid When Cutting (10+ cal/g)" }
+  }
+}
