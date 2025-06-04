@@ -1,23 +1,63 @@
+import { useState } from 'react'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/Card'
-import { TrendingUp, Calendar, Target, Activity } from 'lucide-react'
+import { TrendingUp, Calendar, Target, Activity, Plus } from 'lucide-react'
+import { Button } from '@/components/ui/Button'
 import { useAuthStore } from '@/store/useAuthStore'
+import { useBenchmarkSendsStore } from '@/store/useBenchmarkSendsStore'
+import { AddBenchmarkSendForm } from '@/components/benchmark/AddBenchmarkSendForm'
+import { BenchmarkSendModal } from '@/components/benchmark/BenchmarkSendModal'
 
 export function DashboardPage() {
   const user = useAuthStore((state) => state.user)
+  const { benchmarkSends, addBenchmarkSend, selectedSend, setSelectedSend } = useBenchmarkSendsStore()
+  const [showAddForm, setShowAddForm] = useState(false)
+
+  // Get highest grade for stats
+  const highestGradeSend = benchmarkSends.length > 0 
+    ? benchmarkSends.reduce((max, send) => 
+        send.gradeNumeric > max.gradeNumeric ? send : max
+      )
+    : { grade: 'V0', gradeNumeric: 0 }
 
   // Mock data - replace with API calls
   const stats = {
     sessionsThisWeek: 4,
-    highestGrade: 'V5',
+    highestGrade: highestGradeSend.grade,
     successRate: 65,
     daysToGoal: 180,
   }
 
-  const recentSends = [
-    { grade: 'V4', name: 'Crimpy Paradise', date: '2 days ago' },
-    { grade: 'V5', name: 'The Roof', date: '5 days ago' },
-    { grade: 'V3', name: 'Balance Act', date: '1 week ago' },
-  ]
+  // Get the most recent 3 benchmark sends
+  const recentBenchmarkSends = benchmarkSends
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+    .slice(0, 3)
+
+  const getRelativeDate = (dateStr: string) => {
+    const date = new Date(dateStr)
+    const now = new Date()
+    const diffTime = Math.abs(now.getTime() - date.getTime())
+    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24))
+    
+    if (diffDays === 1) return 'Yesterday'
+    if (diffDays <= 7) return `${diffDays} days ago`
+    if (diffDays <= 30) return `${Math.ceil(diffDays / 7)} weeks ago`
+    return `${Math.ceil(diffDays / 30)} months ago`
+  }
+
+  const getSignificanceIcon = (significance: string) => {
+    switch (significance) {
+      case 'breakthrough': return '🚀'
+      case 'milestone': return '🏆'
+      case 'personal-best': return '⭐'
+      case 'project-send': return '🎯'
+      default: return '🧗'
+    }
+  }
+
+  const handleAddSend = (sendData: any) => {
+    addBenchmarkSend(sendData)
+    setShowAddForm(false)
+  }
 
   return (
     <div>
@@ -77,21 +117,49 @@ export function DashboardPage() {
       <div className="grid gap-4 md:grid-cols-2">
         <Card>
           <CardHeader>
-            <CardTitle>Recent Sends</CardTitle>
-            <CardDescription>Your latest successful climbs</CardDescription>
+            <div className="flex items-center justify-between">
+              <div>
+                <CardTitle>Benchmark Sends</CardTitle>
+                <CardDescription>Your most significant climbs</CardDescription>
+              </div>
+              <Button size="sm" onClick={() => setShowAddForm(true)} className="flex items-center gap-2">
+                <Plus className="h-4 w-4" />
+                Add Send
+              </Button>
+            </div>
           </CardHeader>
           <CardContent>
             <div className="space-y-4">
-              {recentSends.map((send, index) => (
-                <div key={index} className="flex items-center justify-between">
-                  <div>
-                    <p className="font-medium">{send.name}</p>
-                    <p className="text-sm text-slate-500">{send.grade} • {send.date}</p>
+              {recentBenchmarkSends.length > 0 ? (
+                recentBenchmarkSends.map((send) => (
+                  <div 
+                    key={send.id} 
+                    className="flex items-center justify-between p-3 rounded-lg border hover:bg-slate-50 transition-colors cursor-pointer"
+                    onClick={() => setSelectedSend(send)}
+                  >
+                    <div>
+                      <p className="font-medium">{send.name}</p>
+                      <p className="text-sm text-slate-500">{send.grade} • {getRelativeDate(send.date)}</p>
+                      <p className="text-xs text-slate-400">{send.location}</p>
+                    </div>
+                    <div className="text-2xl">{getSignificanceIcon(send.significance)}</div>
                   </div>
-                  <div className="text-2xl">🎯</div>
+                ))
+              ) : (
+                <div className="text-center py-8 text-slate-500">
+                  <div className="text-4xl mb-2">🎯</div>
+                  <p className="text-sm">No benchmark sends yet</p>
+                  <p className="text-xs">Add your first significant send!</p>
                 </div>
-              ))}
+              )}
             </div>
+            {recentBenchmarkSends.length > 0 && (
+              <div className="mt-4 pt-4 border-t">
+                <a href="/benchmark-sends" className="text-sm text-green-600 hover:text-green-700">
+                  View all benchmark sends →
+                </a>
+              </div>
+            )}
           </CardContent>
         </Card>
 
@@ -118,6 +186,20 @@ export function DashboardPage() {
           </CardContent>
         </Card>
       </div>
+
+      {/* Add Benchmark Send Form */}
+      {showAddForm && (
+        <AddBenchmarkSendForm
+          onSubmit={handleAddSend}
+          onCancel={() => setShowAddForm(false)}
+        />
+      )}
+
+      {/* Benchmark Send Details Modal */}
+      <BenchmarkSendModal
+        send={selectedSend}
+        onClose={() => setSelectedSend(null)}
+      />
     </div>
   )
 }

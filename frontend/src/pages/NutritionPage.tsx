@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Plus, Target, Utensils, Zap, TrendingUp } from 'lucide-react'
+import { Plus, Target } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/Card'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/Tabs'

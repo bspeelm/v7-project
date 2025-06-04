@@ -1,8 +1,10 @@
 import { useState } from 'react'
-import { Plus, Calendar, MapPin, Clock } from 'lucide-react'
+import { Plus, Calendar, MapPin, Clock, Target } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/Card'
 import { JournalEntryForm } from '@/components/journal/JournalEntryForm'
+import { AddBenchmarkSendForm } from '@/components/benchmark/AddBenchmarkSendForm'
+import { useBenchmarkSendsStore } from '@/store/useBenchmarkSendsStore'
 import type { JournalEntry } from '@/types'
 
 // Mock data - replace with API calls
@@ -50,6 +52,8 @@ const mockEntries: JournalEntry[] = [
 export function JournalPage() {
   const [entries, setEntries] = useState<JournalEntry[]>(mockEntries)
   const [showForm, setShowForm] = useState(false)
+  const [showBenchmarkForm, setShowBenchmarkForm] = useState(false)
+  const { addBenchmarkSend } = useBenchmarkSendsStore()
 
   const formatDate = (dateStr: string) => {
     return new Date(dateStr).toLocaleDateString('en-US', {
@@ -82,6 +86,11 @@ export function JournalPage() {
     setShowForm(false)
   }
 
+  const handleAddBenchmarkSend = (sendData: any) => {
+    addBenchmarkSend(sendData)
+    setShowBenchmarkForm(false)
+  }
+
   return (
     <div>
       <div className="flex items-center justify-between mb-8">
@@ -89,13 +98,23 @@ export function JournalPage() {
           <h1 className="text-3xl font-bold">Climbing Journal</h1>
           <p className="text-slate-600 mt-2">Track your progress and reflect on your sessions</p>
         </div>
-        <Button 
-          className="flex items-center gap-2"
-          onClick={() => setShowForm(true)}
-        >
-          <Plus className="h-4 w-4" />
-          New Entry
-        </Button>
+        <div className="flex gap-2">
+          <Button 
+            variant="outline"
+            className="flex items-center gap-2"
+            onClick={() => setShowBenchmarkForm(true)}
+          >
+            <Target className="h-4 w-4" />
+            Add Benchmark Send
+          </Button>
+          <Button 
+            className="flex items-center gap-2"
+            onClick={() => setShowForm(true)}
+          >
+            <Plus className="h-4 w-4" />
+            New Entry
+          </Button>
+        </div>
       </div>
 
       {/* Journal Entries */}
@@ -207,6 +226,14 @@ export function JournalPage() {
         <JournalEntryForm
           onSubmit={handleNewEntry}
           onCancel={() => setShowForm(false)}
+        />
+      )}
+
+      {/* Add Benchmark Send Form */}
+      {showBenchmarkForm && (
+        <AddBenchmarkSendForm
+          onSubmit={handleAddBenchmarkSend}
+          onCancel={() => setShowBenchmarkForm(false)}
         />
       )}
     </div>

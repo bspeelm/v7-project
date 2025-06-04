@@ -172,3 +172,22 @@ export interface DataPoint {
   value: number
   label?: string
 }
+
+// Benchmark Send Types
+export interface BenchmarkSend {
+  id: string
+  userId: string
+  grade: string // Display grade (e.g., "V5", "5.12a")
+  gradeNumeric: number // Numeric value for sorting (V0=0, V1=1, 5.10a=100, 5.10b=101, etc.)
+  gradeType: 'v-scale' | 'yds' // V-scale (bouldering) or YDS (route climbing)
+  name: string
+  location: string
+  date: string
+  type: 'indoor' | 'outdoor'
+  style: 'slab' | 'vertical' | 'overhang' | 'roof'
+  attempts: number
+  notes: string
+  media?: string[] // S3 URLs
+  significance: 'breakthrough' | 'milestone' | 'personal-best' | 'project-send'
+  createdAt: string
+}

@@ -49,6 +49,7 @@ export function Header() {
     { name: 'Dashboard', href: '/dashboard' },
     { name: 'Chat', href: '/chat' },
     { name: 'Journal', href: '/journal' },
+    { name: 'Benchmark Sends', href: '/benchmark-sends' },
     { name: 'Training', href: '/training' },
     { name: 'Nutrition', href: '/nutrition' },
     { name: 'Profile', href: '/profile' },

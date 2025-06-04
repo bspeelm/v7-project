@@ -12,6 +12,7 @@ import { JournalPage } from '@/pages/JournalPage'
 import { TrainingPage } from '@/pages/TrainingPage'
 import { ProfilePage } from '@/pages/ProfilePage'
 import { NutritionPage } from '@/pages/NutritionPage'
+import { BenchmarkSendsPage } from '@/pages/BenchmarkSendsPage'
 import { LandingPage } from '@/pages/LandingPage'
 
 const queryClient = new QueryClient()
@@ -68,6 +69,11 @@ function App() {
               <Route path="/profile" element={
                 <ProtectedRoute>
                   <ProfilePage />
+                </ProtectedRoute>
+              } />
+              <Route path="/benchmark-sends" element={
+                <ProtectedRoute>
+                  <BenchmarkSendsPage />
                 </ProtectedRoute>
               } />
             </Routes>
